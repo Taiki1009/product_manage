@@ -24,4 +24,7 @@ Things you may want to cover:
 * 環境構築
   * https://zenn.dev/kei1232/articles/0fac51829570c1
 
+* deviceセットアップ
+  * https://techracho.bpsinc.jp/hachi8833/2023_09_01/133452
+
 * ...
