@@ -37,6 +37,18 @@ module App
     # config.eager_load_paths << Rails.root.join("extras")
 
     # Don't generate system test files.
-    config.generators.system_tests = nil
+    # config.generators.system_tests = nil
+
+    config.generators do |g|
+      g.test_framework :rspec,
+        fixtures: true,            # RSpecのfixtures（Factory Botを使うならtrue推奨）
+        view_specs: false,         # ビュースペックを生成しない
+        helper_specs: false,       # ヘルパースペックを生成しない
+        routing_specs: false,      # ルーティングスペックを生成しない
+        controller_specs: true,    # コントローラスペックを生成したい場合はtrue
+        request_specs: true       # リクエストスペックを生成しない（必要に応じてtrue/false）
+
+      g.fixture_replacement :factory_bot, dir: 'spec/factories'
+    end
   end
 end
